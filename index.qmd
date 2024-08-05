@@ -1,11 +1,111 @@
 ---
-title: "SampleWebsite"
+title: "Style Guide with Associated R Code"
+execute:
+  warning: false
+format:
+  html:
+    code-fold: true
+    code-summary: "Code in R"
+    mainfont: Garamond
+    toc: TRUE
+    toc_float: TRUE
 ---
+## Introduction
 
-This is a Quarto website.
+This site is designed to describe the branding guidelines that the Research Team at EL Education follows, as well as provide ways in which R can be used to construct visualizations and reports.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Throughout, code blocks will be interspersed that show how basic datasets provided with the `tidyverse` can be used to construct graphs that follow EL's Style Guide.
 
-```{r} 
-1 + 1
+```{r}
+library(tidyverse)
 ```
+
+# EL Education Typography
+
+The champion fonts used for short and long pieces of text are **Mercury** and **Mark Pro**. As each font is proprietary and used primarily by our Creative Team when they are composing in Adobe Illustrator, other teams at EL, including the Research Team, uses analogous fonts that are easier to find and use in Office, Google Docs, and R, which are approved by Creative for our work.
+
+In place of **Mark Pro** when using longer pieces of text, it is recommended to use **Garamond**. For constructing charts, tables and other data visualizations, it is recommended that **Poppins** is used in place of **Mercury**. Instructions for loading **Garamond** as a main font in a pdf or html document (as it is on this web page), as well as **Poppins** for visualizations, are below.
+
+## Typography for Longer Form Text
+
+If you wish to write something longer and wish to use **Garamond**, this can be easily done by adding it to the *mainfont* part of the heading at the top of a Quarto document, where you list the [format](https://quarto.org/docs/output-formats/all-formats.html) (example below). 
+
+``` yaml
+format:
+  pdf:
+    mainfont: Garamond
+```
+
+## Typography for charts and visualizations
+
+For charts, and tables, it is easy to add and then call the **Poppins** font using the `showtext` library, which was designed for this purpose.
+
+Whenever you wish to construct visualizations in line with EL's brand guide (especially if sharing externally), you must first run the following piece of code. This will call the `showtext` package, ask it to load the **Poppins* font, and then prepare the font to be applied to any visualization you construct.
+
+```{r}
+#| code-fold: show
+library(showtext)
+font_add_google("Poppins")
+showtext_auto()
+```
+
+Once you have done that, it is as easy as changing the font in the `theme` part of a plot, as you would for any other element.
+
+```{r}
+#| fig-cap: "Loading the Poppins font"
+#| cap-location: top
+
+library(cowplot)
+
+graph1 <- diamonds |> 
+  ggplot(mapping=aes(x=cut)) +
+  geom_bar() +
+  theme_bw() +
+  labs(title="A Regular Graph")
+
+graph2 <- diamonds |> 
+  ggplot(mapping=aes(x=cut)) +
+  geom_bar() +
+  theme_bw() +
+  labs(title="A Regular Graph in Poppins") +
+  theme(text=element_text(family="Poppins"))
+
+plot_grid(graph1, graph2)
+```
+
+# Our Color Palettes, and how to integrate them
+
+Our primary and secondary colors reflect our history and spirit. In particular, [Crimson]{style="color:#c6123f;"} reflects our founding at Harvard University, while our secondary colors include bright, natural tones to capture the spirit of EL Education that is adventurous, energizing and joyful, as well as neutral tones to capture a reflective, academic spirit and evoke our respect
+for the natural world.
+
+A color palette showing our primary and secondary colors can be found below.
+```{r}
+#| fig-cap: "EL Color Palette"
+#| fig-cap-location: top
+
+library(scales)
+
+palette <- c("#c6123f","#211651","#ffa409",
+  "#d1e28f", "#97daeb", "#f3e5b1", "#634347",
+  "#ee5a46", "#f0c147", "#60ad66", "#a390c4")
+
+scales::show_col(palette, ncol=6)
+```
+
+## Our primary and secondary colors
+[Crimson]{style="color:#c6123f;"} represents EL, and should be saved only for elements of a graph that are specific to our partners (e.g., in comparison EL Credentialed schools to their district and state). It should not be used, for instance, in describing a group of students, as that passes a value statement that certain students may be more "EL" than others.
+
+## Making decisions on palette
+
+> There are three fundamental use cases for color in data visualizations: (i) we can use color to distinguish groups of data from each other; (ii) we can use color to represent data values; and (iii) we can use color to highlight. The types of colors we use and the way in which we use them are quite different for these three cases. 
+> - Claus Wilke, *Fundamentals of Data Visualization*
+
+While we are free to use the EL palette for cases (i) and (iii) as appropriate, (ii) is trickier because our choice of color should match the type of data that we are representing. As such, we can use the EL palette as a base to create other palettes that more appropriately represent the data we are visualizing.
+
+### Showing range with a Sequential Palette
+
+### Showing divergence from a central value with a Divergent Palette
+
+### Showing categories with a Qualitative Palette
+
+# The EL Education theme

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EL Education Data Visualization Guidelines - SampleWebsite</title>
+<title>EL Education Data Visualization Site - Style Guide with Associated R Code</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">EL Education Data Visualization Guidelines</span>
+    <span class="navbar-title">EL Education Data Visualization Site</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -124,11 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">Style Guide with <br> associated R Code</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -142,14 +138,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#el-education-typography" id="toc-el-education-typography" class="nav-link" data-scroll-target="#el-education-typography">EL Education Typography</a>
+  <ul class="collapse">
+  <li><a href="#typography-for-longer-form-text" id="toc-typography-for-longer-form-text" class="nav-link" data-scroll-target="#typography-for-longer-form-text">Typography for Longer Form Text</a></li>
+  <li><a href="#typography-for-charts-and-visualizations" id="toc-typography-for-charts-and-visualizations" class="nav-link" data-scroll-target="#typography-for-charts-and-visualizations">Typography for charts and visualizations</a></li>
+  </ul></li>
+  <li><a href="#our-color-palettes-and-how-to-integrate-them" id="toc-our-color-palettes-and-how-to-integrate-them" class="nav-link" data-scroll-target="#our-color-palettes-and-how-to-integrate-them">Our Color Palettes, and how to integrate them</a>
+  <ul class="collapse">
+  <li><a href="#our-primary-and-secondary-colors" id="toc-our-primary-and-secondary-colors" class="nav-link" data-scroll-target="#our-primary-and-secondary-colors">Our primary and secondary colors</a></li>
+  <li><a href="#making-decisions-on-palette" id="toc-making-decisions-on-palette" class="nav-link" data-scroll-target="#making-decisions-on-palette">Making decisions on palette</a>
+  <ul class="collapse">
+  <li><a href="#showing-range-with-a-sequential-palette" id="toc-showing-range-with-a-sequential-palette" class="nav-link" data-scroll-target="#showing-range-with-a-sequential-palette">Showing range with a Sequential Palette</a></li>
+  <li><a href="#showing-divergence-from-a-central-value-with-a-divergent-palette" id="toc-showing-divergence-from-a-central-value-with-a-divergent-palette" class="nav-link" data-scroll-target="#showing-divergence-from-a-central-value-with-a-divergent-palette">Showing divergence from a central value with a Divergent Palette</a></li>
+  <li><a href="#showing-categories-with-a-qualitative-palette" id="toc-showing-categories-with-a-qualitative-palette" class="nav-link" data-scroll-target="#showing-categories-with-a-qualitative-palette">Showing categories with a Qualitative Palette</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#the-el-education-theme" id="toc-the-el-education-theme" class="nav-link" data-scroll-target="#the-el-education-theme">The EL Education theme</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">SampleWebsite</h1>
+<h1 class="title">Style Guide with Associated R Code</h1>
 </div>
 
 
@@ -166,16 +184,122 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This site is designed to describe the branding guidelines that the Research Team at EL Education follows, as well as provide ways in which R can be used to construct visualizations and reports.</p>
+<p>Throughout, code blocks will be interspersed that show how basic datasets provided with the <code>tidyverse</code> can be used to construct graphs that follow EL’s Style Guide.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<details class="code-fold">
+<summary>Code in R</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="el-education-typography" class="level1">
+<h1>EL Education Typography</h1>
+<p>The champion fonts used for short and long pieces of text are <strong>Mercury</strong> and <strong>Mark Pro</strong>. As each font is proprietary and used primarily by our Creative Team when they are composing in Adobe Illustrator, other teams at EL, including the Research Team, uses analogous fonts that are easier to find and use in Office, Google Docs, and R, which are approved by Creative for our work.</p>
+<p>In place of <strong>Mark Pro</strong> when using longer pieces of text, it is recommended to use <strong>Garamond</strong>. For constructing charts, tables and other data visualizations, it is recommended that <strong>Poppins</strong> is used in place of <strong>Mercury</strong>. Instructions for loading <strong>Garamond</strong> as a main font in a pdf or html document (as it is on this web page), as well as <strong>Poppins</strong> for visualizations, are below.</p>
+<section id="typography-for-longer-form-text" class="level2">
+<h2 class="anchored" data-anchor-id="typography-for-longer-form-text">Typography for Longer Form Text</h2>
+<p>If you wish to write something longer and wish to use <strong>Garamond</strong>, this can be easily done by adding it to the <em>mainfont</em> part of the heading at the top of a Quarto document, where you list the <a href="https://quarto.org/docs/output-formats/all-formats.html">format</a> (example below).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> Garamond</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="typography-for-charts-and-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="typography-for-charts-and-visualizations">Typography for charts and visualizations</h2>
+<p>For charts, and tables, it is easy to add and then call the <strong>Poppins</strong> font using the <code>showtext</code> library, which was designed for this purpose.</p>
+<p>Whenever you wish to construct visualizations in line with EL’s brand guide (especially if sharing externally), you must first run the following piece of code. This will call the <code>showtext</code> package, ask it to load the **Poppins* font, and then prepare the font to be applied to any visualization you construct.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code in R</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(showtext)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">font_add_google</span>(<span class="st">"Poppins"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">showtext_auto</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Once you have done that, it is as easy as changing the font in the <code>theme</code> part of a plot, as you would for any other element.</p>
+<div class="cell" data-cap-location="top">
+<details class="code-fold">
+<summary>Code in R</summary>
+<div class="sourceCode cell-code" id="cb4" data-cap-location="top"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>graph1 <span class="ot">&lt;-</span> diamonds <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>cut)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"A Regular Graph"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>graph2 <span class="ot">&lt;-</span> diamonds <span class="sc">|&gt;</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>cut)) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"A Regular Graph in Poppins"</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text=</span><span class="fu">element_text</span>(<span class="at">family=</span><span class="st">"Poppins"</span>))</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(graph1, graph2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Loading the Poppins font</figcaption>
+</figure>
 </div>
 </div>
+</div>
+</section>
+</section>
+<section id="our-color-palettes-and-how-to-integrate-them" class="level1">
+<h1>Our Color Palettes, and how to integrate them</h1>
+<p>Our primary and secondary colors reflect our history and spirit. In particular, <span style="color:#c6123f;">Crimson</span> reflects our founding at Harvard University, while our secondary colors include bright, natural tones to capture the spirit of EL Education that is adventurous, energizing and joyful, as well as neutral tones to capture a reflective, academic spirit and evoke our respect for the natural world.</p>
+<p>A color palette showing our primary and secondary colors can be found below.</p>
+<div class="cell fig-cap-location-top">
+<details class="code-fold">
+<summary>Code in R</summary>
+<div class="sourceCode cell-code" id="cb5" data-cap-location="top"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#c6123f"</span>,<span class="st">"#211651"</span>,<span class="st">"#ffa409"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#d1e28f"</span>, <span class="st">"#97daeb"</span>, <span class="st">"#f3e5b1"</span>, <span class="st">"#634347"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#ee5a46"</span>, <span class="st">"#f0c147"</span>, <span class="st">"#60ad66"</span>, <span class="st">"#a390c4"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>scales<span class="sc">::</span><span class="fu">show_col</span>(palette, <span class="at">ncol=</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>EL Color Palette</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="our-primary-and-secondary-colors" class="level2">
+<h2 class="anchored" data-anchor-id="our-primary-and-secondary-colors">Our primary and secondary colors</h2>
+<p><span style="color:#c6123f;">Crimson</span> represents EL, and should be saved only for elements of a graph that are specific to our partners (e.g., in comparison EL Credentialed schools to their district and state). It should not be used, for instance, in describing a group of students, as that passes a value statement that certain students may be more “EL” than others.</p>
+</section>
+<section id="making-decisions-on-palette" class="level2">
+<h2 class="anchored" data-anchor-id="making-decisions-on-palette">Making decisions on palette</h2>
+<blockquote class="blockquote">
+<p>There are three fundamental use cases for color in data visualizations: (i) we can use color to distinguish groups of data from each other; (ii) we can use color to represent data values; and (iii) we can use color to highlight. The types of colors we use and the way in which we use them are quite different for these three cases. - Claus Wilke, <em>Fundamentals of Data Visualization</em></p>
+</blockquote>
+<p>While we are free to use the EL palette for cases (i) and (iii) as appropriate, (ii) is trickier because our choice of color should match the type of data that we are representing. As such, we can use the EL palette as a base to create other palettes that more appropriately represent the data we are visualizing.</p>
+<section id="showing-range-with-a-sequential-palette" class="level3">
+<h3 class="anchored" data-anchor-id="showing-range-with-a-sequential-palette">Showing range with a Sequential Palette</h3>
+</section>
+<section id="showing-divergence-from-a-central-value-with-a-divergent-palette" class="level3">
+<h3 class="anchored" data-anchor-id="showing-divergence-from-a-central-value-with-a-divergent-palette">Showing divergence from a central value with a Divergent Palette</h3>
+</section>
+<section id="showing-categories-with-a-qualitative-palette" class="level3">
+<h3 class="anchored" data-anchor-id="showing-categories-with-a-qualitative-palette">Showing categories with a Qualitative Palette</h3>
+</section>
+</section>
+</section>
+<section id="the-el-education-theme" class="level1">
+<h1>The EL Education theme</h1>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

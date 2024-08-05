@@ -3,15 +3,15 @@ project:
   output-dir: docs
 
 website:
-  title: "EL Education Data Visualization Guidelines"
+  title: "EL Education Data Visualization Site"
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Style Guide with <br> associated R Code
 
 format:
   html:
-    theme: cosmo
+    theme: simplex
     css: styles.css
     toc: true
+    mainfont: Garamond

@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "SampleWebsite",
+    "title": "Style Guide with Associated R Code",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "This site is designed to describe the branding guidelines that the Research Team at EL Education follows, as well as provide ways in which R can be used to construct visualizations and reports.\nThroughout, code blocks will be interspersed that show how basic datasets provided with the tidyverse can be used to construct graphs that follow EL’s Style Guide.\n\n\nCode in R\nlibrary(tidyverse)"
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,54 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Style Guide with Associated R Code",
+    "section": "",
+    "text": "This site is designed to describe the branding guidelines that the Research Team at EL Education follows, as well as provide ways in which R can be used to construct visualizations and reports.\nThroughout, code blocks will be interspersed that show how basic datasets provided with the tidyverse can be used to construct graphs that follow EL’s Style Guide.\n\n\nCode in R\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "index.html#loading-the-font-for-text",
+    "href": "index.html#loading-the-font-for-text",
+    "title": "Data Visualization Guidelines and Use in R",
+    "section": "Loading the font for text",
+    "text": "Loading the font for text\nIf you wish to write something longer and wish to use Garamond, this can be easily done by adding it to the mainfont part of the heading at the top of a Quarto document, where you list the format.\nformat:\n  pdf:\n    mainfont: Garamond"
+  },
+  {
+    "objectID": "index.html#loading-fonts-for-charts-and-visualizations",
+    "href": "index.html#loading-fonts-for-charts-and-visualizations",
+    "title": "Data Visualization Guidelines and Use in R",
+    "section": "Loading fonts for charts and visualizations",
+    "text": "Loading fonts for charts and visualizations"
+  },
+  {
+    "objectID": "index.html#our-primary-and-secondary-colors",
+    "href": "index.html#our-primary-and-secondary-colors",
+    "title": "Style Guide with Associated R Code",
+    "section": "Our primary and secondary colors",
+    "text": "Our primary and secondary colors\nCrimson represents EL, and should be saved only for elements of a graph that are specific to our partners (e.g., in comparison EL Credentialed schools to their district and state). It should not be used, for instance, in describing a group of students, as that passes a value statement that certain students may be more “EL” than others."
+  },
+  {
+    "objectID": "index.html#making-decisions-on-palette",
+    "href": "index.html#making-decisions-on-palette",
+    "title": "Style Guide with Associated R Code",
+    "section": "Making decisions on palette",
+    "text": "Making decisions on palette\n\nThere are three fundamental use cases for color in data visualizations: (i) we can use color to distinguish groups of data from each other; (ii) we can use color to represent data values; and (iii) we can use color to highlight. The types of colors we use and the way in which we use them are quite different for these three cases. - Claus Wilke, Fundamentals of Data Visualization\n\nWhile we are free to use the EL palette for cases (i) and (iii) as appropriate, (ii) is trickier because our choice of color should match the type of data that we are representing. As such, we can use the EL palette as a base to create other palettes that more appropriately represent the data we are visualizing.\n\nShowing range with a Sequential Palette\n\n\nShowing divergence from a central value with a Divergent Palette\n\n\nShowing categories with a Qualitative Palette"
+  },
+  {
+    "objectID": "index.html#typography-for-longer-form-text",
+    "href": "index.html#typography-for-longer-form-text",
+    "title": "Style Guide with Associated R Code",
+    "section": "Typography for Longer Form Text",
+    "text": "Typography for Longer Form Text\nIf you wish to write something longer and wish to use Garamond, this can be easily done by adding it to the mainfont part of the heading at the top of a Quarto document, where you list the format (example below).\nformat:\n  pdf:\n    mainfont: Garamond"
+  },
+  {
+    "objectID": "index.html#typography-for-charts-and-visualizations",
+    "href": "index.html#typography-for-charts-and-visualizations",
+    "title": "Style Guide with Associated R Code",
+    "section": "Typography for charts and visualizations",
+    "text": "Typography for charts and visualizations\nFor charts, and tables, it is easy to add and then call the Poppins font using the showtext library, which was designed for this purpose.\nWhenever you wish to construct visualizations in line with EL’s brand guide (especially if sharing externally), you must first run the following piece of code. This will call the showtext package, ask it to load the **Poppins* font, and then prepare the font to be applied to any visualization you construct.\n\n\nCode in R\nlibrary(showtext)\nfont_add_google(\"Poppins\")\nshowtext_auto()\n\n\nOnce you have done that, it is as easy as changing the font in the theme part of a plot, as you would for any other element.\n\n\nCode in R\nlibrary(cowplot)\n\ngraph1 &lt;- diamonds |&gt; \n  ggplot(mapping=aes(x=cut)) +\n  geom_bar() +\n  theme_bw() +\n  labs(title=\"A Regular Graph\")\n\ngraph2 &lt;- diamonds |&gt; \n  ggplot(mapping=aes(x=cut)) +\n  geom_bar() +\n  theme_bw() +\n  labs(title=\"A Regular Graph in Poppins\") +\n  theme(text=element_text(family=\"Poppins\"))\n\nplot_grid(graph1, graph2)\n\n\n\n\n\nLoading the Poppins font"
   }
 ]
