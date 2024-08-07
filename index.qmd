@@ -189,6 +189,9 @@ Two things to keep in mind:
 2. Color blindness is not a small issue. Fortunately, the `colorblindr` package can convert any graph constructed in `ggplot2` into a set of graphs as it would be viewed by people with different forms of color blindness.
 
 ```{r}
+#| label: fig-colorblindpalette
+#| fig-cap: "The colorblindr package allows you to take any plot and look at it through common forms of color blindness"
+
 
 ELcolors <- palette_plot(palette) + ggtitle("EL Palette") +
   theme(text=element_text(family="Poppins"))
@@ -196,5 +199,22 @@ ELcolorscvd <- cvd_grid(palette_plot(palette, color_labels=FALSE)) + theme(text=
 
 plot_grid(ELcolors,ELcolorscvd,ncol=1)
 ```
+Deutanomaly and Protanomaly are the most common forms of color blindness, so it is useful for external plots to just check. In the graph below, notice that many of the EL colors look similar when plotted through common forms of color blindness.
 
-# The EL Education theme
+```{r}
+colorblindpalette <- c("#d1e28f","#f3e5b1","#ee5a46","#60ad66","#ffa409")
+
+graph1 <- diamonds |> 
+  ggplot(mapping=aes(x=cut, fill=cut)) +
+  geom_bar() +
+  scale_fill_manual(values=colorblindpalette) +
+  theme_bw() +
+  theme(text=element_text(family="Poppins"))
+
+graph2 <- cvd_grid(graph1)
+
+plot_grid(graph1,graph2,ncol=1)
+  
+```
+
+Instead of setting our palettes, we understand that we will pull colors as necessary. If the number of categories exceeds one that we can easily graph with our palette, it is also useful to pull palettes from the `viridis` or `RColorBrewer` packages.
