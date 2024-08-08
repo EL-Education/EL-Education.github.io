@@ -3,15 +3,18 @@ project:
   output-dir: docs
 
 website:
-  title: "EL Education Data Visualization Site"
+  
   navbar:
+    logo: "EL_EDUCATION_logo_white.png"
     left:
       - href: index.qmd
         text: Style Guide with <br> associated R Code
 
 format:
   html:
-    theme: simplex
+    theme: 
+      - simplex
+      - custom.scss
     css: styles.css
     toc: true
     mainfont: Garamond
