@@ -40,7 +40,7 @@ format:
 
 For charts, and tables, it is easy to add and then call the **Poppins** font using the `showtext` library, which was designed for this purpose.
 
-Whenever you wish to construct visualizations in line with EL's brand guide (especially if sharing externally), you must first run the following piece of code. This will call the `showtext` package, ask it to load the **Poppins* font, and then prepare the font to be applied to any visualization you construct.
+Whenever you wish to construct visualizations in line with EL's brand guide (especially if sharing externally), you must first run the following piece of code. This will call the `showtext` package, ask it to load the **Poppins** font, and then prepare the font to be applied to any visualization you construct.
 
 ```{r}
 #| code-fold: show
@@ -56,6 +56,7 @@ Once you have done that, it is as easy as changing the font in the `theme` part 
 #| label: fig-PoppinsGraph
 
 library(cowplot)
+cowplot::set_null_device("agg")
 
 graph1 <- diamonds |> 
   ggplot(mapping=aes(x=cut)) +
