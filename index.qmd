@@ -185,8 +185,9 @@ diamonds2 |>
 
 In situations where one needs a palette for categorical or nominal data that is unordered, it is appropriate to use the EL palette outlined above in @fig-ELColorPalette
 
-Two things to keep in mind:
-1. Crimson is reserved for qualitative palettes where EL represents one category **only** (for instance, a graph that is comparing EL schools to schools within the district)
+Two things to keep in mind:  
+
+1. Crimson is reserved for qualitative palettes where EL represents one category **only** (for instance, a graph that is comparing EL schools to schools within the district).  
 2. Color blindness is not a small issue. Fortunately, the `colorblindr` package can convert any graph constructed in `ggplot2` into a set of graphs as it would be viewed by people with different forms of color blindness.
 
 ```{r}
